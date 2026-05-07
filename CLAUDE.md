@@ -63,8 +63,8 @@ src/NativeInAppReview.ts   ← Codegen spec (Spec interface = single source of t
 ### Key Conventions
 
 - **Codegen first**: Any new native method must be added to `Spec` in `NativeInAppReview.ts` before touching native code. The codegen name (`InAppReviewSpec`) maps to `codegenConfig.name` in `package.json`.
-- **Platform split**: Use `foo.native.tsx` for the native call-through and `foo.tsx` for the web fallback. Metro resolves `.native` automatically.
-- **No JSX in native shims**: `*.native.tsx` files only import from `NativeInAppReview.ts` — they are plain TS with a `.tsx` extension for historic reasons.
+- **Platform split**: Use `foo.native.ts` for the native call-through and `foo.ts` for the web fallback. Metro resolves `.native` automatically.
+- **No JSX in native shims**: `*.native.ts` files only import from `NativeInAppReview.ts` — they contain no JSX and use the `.ts` extension.
 - **Kotlin style**: Android module extends the codegen-generated abstract class `NativeInAppReviewSpec`. Never extend `ReactContextBaseJavaModule` directly.
 - **iOS style**: `InAppReview.mm` must implement `getTurboModule:` returning `NativeInAppReviewSpecJSI` for JSI binding.
 
