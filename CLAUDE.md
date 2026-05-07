@@ -6,8 +6,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A React Native TurboModule library that wraps the **Google Play In-App Review API** (Android) and **Apple StoreKit `requestReview`** (iOS) so apps can prompt users for ratings without leaving the app. Forked from [MinaSamir11/react-native-in-app-review](https://github.com/MinaSamir11/react-native-in-app-review) and migrated to the New Architecture (TurboModules + Codegen).
 
-The current codebase is a scaffold: the `multiply()` function is a placeholder left from `create-react-native-library`. The actual in-app review API is **not yet implemented** — that is the primary goal.
-
 ## Common Commands
 
 ```bash
@@ -52,15 +50,15 @@ src/NativeInAppReview.ts   ← Codegen spec (Spec interface = single source of t
 
 ### Platform Entry Points
 
-| File                                                          | Role                                                                   |
-| ------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `src/NativeInAppReview.ts`                                    | Codegen spec — defines every method that crosses the JS↔native bridge  |
-| `src/index.tsx`                                               | Public JS API (re-exports from `multiply.tsx` / `multiply.native.tsx`) |
-| `src/multiply.native.tsx`                                     | Native implementation — calls `InAppReview` TurboModule                |
-| `src/multiply.tsx`                                            | Web/non-native fallback — pure JS                                      |
-| `ios/InAppReview.h` / `.mm`                                   | Obj-C++ implementation of the spec                                     |
-| `android/src/main/java/com/inappreview/InAppReviewModule.kt`  | Kotlin implementation                                                  |
-| `android/src/main/java/com/inappreview/InAppReviewPackage.kt` | Module registration                                                    |
+| File                                                          | Role                                                                         |
+| ------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `src/NativeInAppReview.ts`                                    | Codegen spec — defines every method that crosses the JS↔native bridge        |
+| `src/index.tsx`                                               | Public JS API (re-exports from `InAppReview.native.tsx` / `InAppReview.tsx`) |
+| `src/InAppReview.native.tsx`                                  | Native implementation — calls `InAppReview` TurboModule                      |
+| `src/InAppReview.tsx`                                         | Web/non-native fallback — pure JS                                            |
+| `ios/InAppReview.h` / `.mm`                                   | Obj-C++ implementation of the spec                                           |
+| `android/src/main/java/com/inappreview/InAppReviewModule.kt`  | Kotlin implementation                                                        |
+| `android/src/main/java/com/inappreview/InAppReviewPackage.kt` | Module registration                                                          |
 
 ### Key Conventions
 
@@ -79,14 +77,13 @@ src/NativeInAppReview.ts   ← Codegen spec (Spec interface = single source of t
 
 `turbo.json` declares `build:android` and `build:ios` tasks that run the example app native builds with proper input hashing for CI caching.
 
-### What Needs to Be Implemented
+### Implemented API
 
-Replace the `multiply` scaffold with the actual in-app review flow:
-
-1. **`src/NativeInAppReview.ts`** — replace `multiply` with `requestInAppReview(): Promise<void>`
-2. **Android** — add `com.google.android.play:review` dependency; call `ReviewManager.requestReviewFlow()` then `launchReviewFlow()`
-3. **iOS** — call `SKStoreReviewController.requestReview(in:)` (iOS 14+) or `SKStoreReviewController.requestReview()` (fallback)
-4. Update `src/index.tsx` and platform files accordingly
+| Method                              | iOS                                                    | Android                           | Web     |
+| ----------------------------------- | ------------------------------------------------------ | --------------------------------- | ------- |
+| `isAvailable()`                     | Always `true` (StoreKit always present)                | `true` when Play Store installed  | `false` |
+| `requestReview()`                   | `requestReviewInScene` (14+) / `requestReview` (10.3+) | Play Core 2-step flow             | no-op   |
+| `openStoreListing({ appStoreId? })` | `itms-apps://` deep-link (appStoreId required)         | `market://` → `https://` fallback | no-op   |
 
 ## Workspace Layout
 

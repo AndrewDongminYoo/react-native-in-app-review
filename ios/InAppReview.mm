@@ -28,19 +28,17 @@
       }
       if (targetScene) {
         [SKStoreReviewController requestReviewInScene:targetScene];
+        resolve(nil);
       } else {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        [SKStoreReviewController requestReview];
-#pragma clang diagnostic pop
+        reject(@"ACTIVITY_NULL", @"No active UIWindowScene found", nil);
       }
     } else {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
       [SKStoreReviewController requestReview];
 #pragma clang diagnostic pop
+      resolve(nil);
     }
-    resolve(nil);
   });
 }
 

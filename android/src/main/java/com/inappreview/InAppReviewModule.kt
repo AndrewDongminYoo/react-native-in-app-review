@@ -25,7 +25,7 @@ class InAppReviewModule(
   override fun requestReview(promise: Promise) {
     val activity = currentActivity
     if (activity == null) {
-      promise.reject("NO_ACTIVITY", "No foreground activity found")
+      promise.reject("ACTIVITY_NULL", "No foreground activity found")
       return
     }
 
@@ -59,7 +59,7 @@ class InAppReviewModule(
 
     val activity = currentActivity
     if (activity == null) {
-      promise.reject("NO_ACTIVITY", "No foreground activity found")
+      promise.reject("ACTIVITY_NULL", "No foreground activity found")
       return
     }
 
@@ -82,7 +82,7 @@ class InAppReviewModule(
         activity.startActivity(fallback)
         promise.resolve(null)
       } catch (ex: Exception) {
-        promise.reject("OPEN_URL_FAILED", ex.message, ex)
+        promise.reject("OPEN_STORE_FAILED", ex.message, ex)
       }
     }
   }
