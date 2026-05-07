@@ -1,4 +1,4 @@
-import NativeInAppReview from './NativeInAppReview';
+import NativeInAppReview from "./NativeInAppReview";
 
 export function isAvailable(): Promise<boolean> {
   return NativeInAppReview.isAvailable();
@@ -9,7 +9,7 @@ export function requestReview(): Promise<void> {
 }
 
 export function openStoreListing(
-  options: { appStoreId?: string } = {}
+  options: { appStoreId?: string } = {},
 ): Promise<void> {
   return NativeInAppReview.openStoreListing(options.appStoreId ?? null);
 }
