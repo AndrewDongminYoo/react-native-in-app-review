@@ -50,15 +50,15 @@ src/NativeInAppReview.ts   ← Codegen spec (Spec interface = single source of t
 
 ### Platform Entry Points
 
-| File                                                          | Role                                                                         |
-| ------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `src/NativeInAppReview.ts`                                    | Codegen spec — defines every method that crosses the JS↔native bridge        |
-| `src/index.tsx`                                               | Public JS API (re-exports from `InAppReview.native.tsx` / `InAppReview.tsx`) |
-| `src/InAppReview.native.tsx`                                  | Native implementation — calls `InAppReview` TurboModule                      |
-| `src/InAppReview.tsx`                                         | Web/non-native fallback — pure JS                                            |
-| `ios/InAppReview.h` / `.mm`                                   | Obj-C++ implementation of the spec                                           |
-| `android/src/main/java/com/inappreview/InAppReviewModule.kt`  | Kotlin implementation                                                        |
-| `android/src/main/java/com/inappreview/InAppReviewPackage.kt` | Module registration                                                          |
+| File                                                          | Role                                                                       |
+| ------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `src/NativeInAppReview.ts`                                    | Codegen spec — defines every method that crosses the JS↔native bridge      |
+| `src/index.ts`                                                | Public JS API (re-exports from `InAppReview.native.ts` / `InAppReview.ts`) |
+| `src/InAppReview.native.ts`                                   | Native implementation — calls `InAppReview` TurboModule                    |
+| `src/InAppReview.ts`                                          | Web/non-native fallback — pure JS                                          |
+| `ios/InAppReview.h` / `.mm`                                   | Obj-C++ implementation of the spec                                         |
+| `android/src/main/java/com/inappreview/InAppReviewModule.kt`  | Kotlin implementation                                                      |
+| `android/src/main/java/com/inappreview/InAppReviewPackage.kt` | Module registration                                                        |
 
 ### Key Conventions
 
