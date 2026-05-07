@@ -1,1 +1,1 @@
-export { isAvailable, openStoreListing, requestReview } from "./InAppReview";
+export { isAvailable, openStoreListing, requestReview } from './InAppReview';

@@ -553,7 +553,6 @@ Prompt users to rate your app without leaving it. Wraps the [Google Play In-App 
 ```sh
 npm install react-native-in-app-review
 ```
-````
 
 ## Usage
 
@@ -608,7 +607,6 @@ Opens the store page directly.
 ## License
 
 MIT
-
 ````
 
 - [ ] **Step 3: Update `CLAUDE.md` — remove "not yet implemented" language**
@@ -618,12 +616,12 @@ Find the section under `### What Needs to Be Implemented` and replace it with:
 ```md
 ### Implemented API
 
-| Method | iOS | Android | Web |
-|--------|-----|---------|-----|
-| `isAvailable()` | `true` on iOS 10.3+ | `true` when Play Store installed | `false` |
-| `requestReview()` | StoreKit `requestReviewInScene` (14+) / `requestReview` (10.3+) | Play Core 2-step flow | no-op |
-| `openStoreListing({ appStoreId? })` | `itms-apps://` URL | `market://` → `https://` fallback | no-op |
-````
+| Method                              | iOS                                                             | Android                           | Web     |
+| ----------------------------------- | --------------------------------------------------------------- | --------------------------------- | ------- |
+| `isAvailable()`                     | `true` on iOS 10.3+                                             | `true` when Play Store installed  | `false` |
+| `requestReview()`                   | StoreKit `requestReviewInScene` (14+) / `requestReview` (10.3+) | Play Core 2-step flow             | no-op   |
+| `openStoreListing({ appStoreId? })` | `itms-apps://` URL                                              | `market://` → `https://` fallback | no-op   |
+```
 
 - [ ] **Step 4: Run lint + typecheck**
 

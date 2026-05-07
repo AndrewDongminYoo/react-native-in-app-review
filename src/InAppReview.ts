@@ -7,7 +7,7 @@ export function requestReview(): Promise<void> {
 }
 
 export function openStoreListing(
-  _options: { appStoreId?: string } = {},
+  _options: { appStoreId?: string } = {}
 ): Promise<void> {
   return Promise.resolve();
 }
