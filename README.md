@@ -1,4 +1,4 @@
-# react-native-in-app-review
+# @dongminyu/react-native-in-app-review
 
 A React Native TurboModule that wraps the **Google Play In-App Review API** (Android) and **Apple StoreKit `requestReview`** (iOS), allowing apps to prompt users for ratings and reviews without leaving the app.
 
@@ -17,9 +17,9 @@ Built on the New Architecture (TurboModules + Codegen).
 ## Installation
 
 ```sh
-npm install react-native-in-app-review
+npm install @dongminyu/react-native-in-app-review
 # or
-yarn add react-native-in-app-review
+yarn add @dongminyu/react-native-in-app-review
 ```
 
 ### iOS
@@ -109,7 +109,7 @@ import {
   isAvailable,
   openStoreListing,
   requestReview,
-} from 'react-native-in-app-review';
+} from '@dongminyu/react-native-in-app-review';
 
 async function promptForReview() {
   const supported = await isAvailable();
@@ -129,7 +129,10 @@ async function promptForReview() {
 ### With error handling
 
 ```ts
-import { openStoreListing, requestReview } from 'react-native-in-app-review';
+import {
+  openStoreListing,
+  requestReview,
+} from '@dongminyu/react-native-in-app-review';
 
 async function handleRateUs() {
   try {
