@@ -8,24 +8,28 @@ import com.facebook.react.module.model.ReactModuleInfoProvider
 import java.util.HashMap
 
 class InAppReviewPackage : BaseReactPackage() {
-  override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? {
-    return if (name == InAppReviewModule.NAME) {
+  override fun getModule(
+    name: String,
+    reactContext: ReactApplicationContext,
+  ): NativeModule? =
+    if (name == InAppReviewModule.NAME) {
       InAppReviewModule(reactContext)
     } else {
       null
     }
-  }
 
-  override fun getReactModuleInfoProvider() = ReactModuleInfoProvider {
-    mapOf(
-      InAppReviewModule.NAME to ReactModuleInfo(
-        name = InAppReviewModule.NAME,
-        className = InAppReviewModule.NAME,
-        canOverrideExistingModule = false,
-        needsEagerInit = false,
-        isCxxModule = false,
-        isTurboModule = true
+  override fun getReactModuleInfoProvider() =
+    ReactModuleInfoProvider {
+      mapOf(
+        InAppReviewModule.NAME to
+          ReactModuleInfo(
+            name = InAppReviewModule.NAME,
+            className = InAppReviewModule.NAME,
+            canOverrideExistingModule = false,
+            needsEagerInit = false,
+            isCxxModule = false,
+            isTurboModule = true,
+          ),
       )
-    )
-  }
+    }
 }

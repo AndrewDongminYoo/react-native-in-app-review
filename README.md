@@ -4,14 +4,11 @@ The Google Play In-App Review API, App store rating API lets you prompt users to
 
 ## Installation
 
-
 ```sh
 npm install react-native-in-app-review
 ```
 
-
 ## Usage
-
 
 ```js
 import { multiply } from 'react-native-in-app-review';
@@ -20,7 +17,6 @@ import { multiply } from 'react-native-in-app-review';
 
 const result = multiply(3, 7);
 ```
-
 
 ## Contributing
 
