@@ -2,6 +2,7 @@ package com.inappreview
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactApplicationContext
@@ -10,6 +11,8 @@ import com.google.android.play.core.review.ReviewManagerFactory
 class InAppReviewModule(
   reactContext: ReactApplicationContext,
 ) : NativeInAppReviewSpec(reactContext) {
+  private val reviewManager by lazy { ReviewManagerFactory.create(reactApplicationContext) }
+
   override fun isAvailable(promise: Promise) {
     try {
       // Available when the Google Play Store app is installed (API 21+ is already enforced
@@ -17,7 +20,7 @@ class InAppReviewModule(
       reactApplicationContext.packageManager
         .getPackageInfo("com.android.vending", 0)
       promise.resolve(true)
-    } catch (e: Exception) {
+    } catch (e: PackageManager.NameNotFoundException) {
       promise.resolve(false)
     }
   }
@@ -29,12 +32,10 @@ class InAppReviewModule(
       return
     }
 
-    val manager = ReviewManagerFactory.create(reactApplicationContext)
-    val request = manager.requestReviewFlow()
-    request.addOnCompleteListener { task ->
+    reviewManager.requestReviewFlow().addOnCompleteListener { task ->
       if (task.isSuccessful) {
         val reviewInfo = task.result
-        val flow = manager.launchReviewFlow(activity, reviewInfo)
+        val flow = reviewManager.launchReviewFlow(activity, reviewInfo)
         flow.addOnCompleteListener {
           // launchReviewFlow always succeeds (the OS silently rate-limits the dialog).
           promise.resolve(null)

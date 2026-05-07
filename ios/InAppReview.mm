@@ -54,6 +54,10 @@
   NSString *urlString = [NSString stringWithFormat:
     @"itms-apps://itunes.apple.com/app/id%@?action=write-review", appStoreId];
   NSURL *url = [NSURL URLWithString:urlString];
+  if (!url) {
+    reject(@"INVALID_URL", @"Failed to construct App Store URL", nil);
+    return;
+  }
 
   dispatch_async(dispatch_get_main_queue(), ^{
     [[UIApplication sharedApplication] openURL:url
