@@ -1,6 +1,6 @@
 {
   "name": "@dongminyu/react-native-in-app-review",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The Google Play In-App Review API, App store rating API lets you prompt users to submit Play Store or App store ratings and reviews without the inconvenience of leaving your app or game.",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
