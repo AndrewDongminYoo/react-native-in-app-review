@@ -26,7 +26,7 @@ class InAppReviewModule(
   }
 
   override fun requestReview(promise: Promise) {
-    val activity = currentActivity
+    val activity = getCurrentActivity()
     if (activity == null) {
       promise.reject("ACTIVITY_NULL", "No foreground activity found")
       return
@@ -58,7 +58,7 @@ class InAppReviewModule(
       appStoreId?.takeIf { it.isNotBlank() }
         ?: reactApplicationContext.packageName
 
-    val activity = currentActivity
+    val activity = getCurrentActivity()
     if (activity == null) {
       promise.reject("ACTIVITY_NULL", "No foreground activity found")
       return
