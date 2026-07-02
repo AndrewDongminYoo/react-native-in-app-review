@@ -28,8 +28,9 @@ yarn example start    # Metro bundler only
 yarn turbo run build:android
 yarn turbo run build:ios
 
-# Release
-yarn release          # release-it: bumps version, publishes npm, creates GitHub release
+# Release — via the Claude Code `/release` skill (no yarn script)
+# bumps package.json version, updates CHANGELOG.md, runs typecheck + lint + tests,
+# commits `chore(release): 🔖 vX.Y.Z`, and pushes a git tag
 ```
 
 ## Architecture
@@ -70,7 +71,7 @@ src/NativeInAppReview.ts   ← Codegen spec (Spec interface = single source of t
 
 ### Build Pipeline
 
-`react-native-builder-bob` compiles TypeScript to `lib/` with two targets (configured in `package.json` → `react-native-builder-bob`):
+`react-native-builder-bob` compiles TypeScript to `lib/` with two targets (configured in `bob.config.js`):
 
 - `module` (ESM, for Metro/bundlers)
 - `typescript` (type declarations)
