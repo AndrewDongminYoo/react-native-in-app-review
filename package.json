@@ -86,6 +86,9 @@
     "react": "*",
     "react-native": "*"
   },
+  "resolutions": {
+    "fast-xml-parser": "^5.7.0"
+  },
   "workspaces": [
     "example"
   ],
