@@ -87,8 +87,8 @@
     "typescript": "^6.0.2"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+    "react": ">=18.2.0",
+    "react-native": ">=0.76.0"
   },
   "resolutions": {
     "fast-xml-parser": "^5.7.0"

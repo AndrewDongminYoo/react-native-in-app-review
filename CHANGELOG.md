@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - Android: declare a `<queries>` entry for `com.android.vending` so `isAvailable()` no longer returns a false negative on apps targeting Android 11 (API 30) or higher, where package visibility filtering otherwise hides the Play Store package from `getPackageInfo`.
 
+### Changed
+
+- Declare minimum peer dependency versions (`react` `>=18.2.0`, `react-native` `>=0.76.0`) to reflect the New-Architecture-only requirement, replacing the unconstrained `*` ranges.
+
 ## [0.1.3] - 2026-07-10
 
 ### Changed
