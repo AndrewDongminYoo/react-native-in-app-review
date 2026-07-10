@@ -70,7 +70,7 @@ Returns `true` when running iOS 10.3+, which is StoreKit's minimum deployment ta
 - iOS 10.3 – 13.x: `[SKStoreReviewController requestReview]` (deprecated but still functional).
 - Below iOS 10.3: rejects with `UNSUPPORTED`.
 - **Must run on main thread** — all UIKit calls dispatched via `dispatch_get_main_queue()`.
-- The OS silently rate-limits prompts (max ~3/year). The promise resolves after `launchReviewFlow` completes regardless of whether a dialog was shown — this matches OS Behavior that intentionally hides suppression from apps.
+- The OS silently rate-limits prompts (max ~3/year). The promise resolves after the `SKStoreReviewController` `requestReview`/`requestReviewInScene:` call returns, regardless of whether a dialog was shown — this matches OS Behavior that intentionally hides suppression from apps.
 
 ### `openStoreListing`
 
