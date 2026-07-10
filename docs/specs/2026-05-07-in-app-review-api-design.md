@@ -45,7 +45,7 @@ export default TurboModuleRegistry.getEnforcing<Spec>('InAppReview');
 
 Metro resolves `.native.tsx` over `.tsx` automatically:
 
-| File                         | Platform      | Behaviour                |
+| File                         | Platform      | Behavior                 |
 | ---------------------------- | ------------- | ------------------------ |
 | `src/InAppReview.native.tsx` | iOS + Android | Delegates to TurboModule |
 | `src/InAppReview.tsx`        | Web / other   | No-op fallback           |
@@ -70,7 +70,7 @@ Returns `true` when running iOS 10.3+, which is StoreKit's minimum deployment ta
 - iOS 10.3 – 13.x: `[SKStoreReviewController requestReview]` (deprecated but still functional).
 - Below iOS 10.3: rejects with `UNSUPPORTED`.
 - **Must run on main thread** — all UIKit calls dispatched via `dispatch_get_main_queue()`.
-- The OS silently rate-limits prompts (max ~3/year). The promise resolves after `launchReviewFlow` completes regardless of whether a dialog was shown — this matches OS behaviour that intentionally hides suppression from apps.
+- The OS silently rate-limits prompts (max ~3/year). The promise resolves after the `SKStoreReviewController` `requestReview`/`requestReviewInScene:` call returns, regardless of whether a dialog was shown — this matches OS Behavior that intentionally hides suppression from apps.
 
 ### `openStoreListing`
 
@@ -104,7 +104,7 @@ Error paths:
 
 - `requestReviewFlow` failure → reject with `REVIEW_FLOW_ERROR`.
 - `currentActivity == null` → reject with `ACTIVITY_NULL` (app in background).
-- `launchReviewFlow` completion always resolves (OS hides suppression, matching iOS behaviour).
+- `launchReviewFlow` completion always resolves (OS hides suppression, matching iOS Behavior).
 
 The `ReviewManager` instance is created once at module init via `ReviewManagerFactory.create(reactContext)`.
 

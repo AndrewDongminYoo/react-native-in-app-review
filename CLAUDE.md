@@ -102,5 +102,5 @@ react-native-in-app-review-newarch/   ← library root (yarn workspace)
 
 ## Native SDK Requirements
 
-- **Android**: Requires Google Play Core library (`com.google.android.play:review`). Only works on devices with Google Play Store installed. `minSdkVersion` is 24.
+- **Android**: Requires Google Play Core library (`com.google.android.play:review`). Only works on devices with Google Play Store installed. `minSdkVersion` is 24. The `AndroidManifest.xml` declares a `<queries>` entry for `com.android.vending` so `isAvailable()` can see the Play Store package under Android 11+ package visibility filtering.
 - **iOS**: Requires StoreKit. Review prompts are rate-limited by the OS (max ~3 times per 365 days). Test with `SKStoreReviewController` in simulator — it shows a mock dialog.

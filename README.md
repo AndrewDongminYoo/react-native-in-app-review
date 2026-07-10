@@ -35,6 +35,7 @@ StoreKit is linked automatically via the podspec — no manual framework additio
 ### Android
 
 No additional setup required. `com.google.android.play:review` is declared in the library's `build.gradle` and resolved automatically by Gradle.
+The library's manifest also declares a `<queries>` entry for `com.android.vending`, so `isAvailable()` can detect the Play Store on apps targeting Android 11 (API 30) or higher, where [package visibility](https://developer.android.com/training/package-visibility) filtering would otherwise hide it.
 
 > **Requirement**: The in-app review dialog only works on devices with **Google Play Store installed**. It will not appear on emulators without Play Store or on non-Google Android devices.
 
@@ -87,7 +88,7 @@ await openStoreListing({ appStoreId: '1234567890' });
 | ------------ | -------- | -------- | ------------------------------------------ |
 | `appStoreId` | `string` | iOS only | Numeric App Store ID — **required on iOS** |
 
-| Platform | Behaviour                                                                                                              |
+| Platform | Behavior                                                                                                               |
 | -------- | ---------------------------------------------------------------------------------------------------------------------- |
 | Android  | Opens `market://details?id=<packageName>`, falls back to `https://play.google.com/store/apps/details?id=<packageName>` |
 | iOS      | Opens `itms-apps://itunes.apple.com/app/id<appStoreId>?action=write-review`                                            |
@@ -191,7 +192,7 @@ In development (local debug builds not uploaded to Play Console), `requestReview
 
 ### iOS: Simulator vs real device
 
-| Environment              | Behaviour                                                                                                                         |
+| Environment              | Behavior                                                                                                                          |
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
 | Simulator                | Shows a **mock** dialog that looks identical to the real one. Rate-limiting does not apply.                                       |
 | Real device (debug)      | Rate-limiting applies. Use `Settings > [App Name] > Reset Review Prompt` (if available) or delete and reinstall the app to reset. |
@@ -203,7 +204,7 @@ Do not tie any app logic to the assumption that `requestReview()` resolving mean
 
 ## Platform Notes
 
-| Behaviour                               | Android                          | iOS                                 |
+| Behavior                                | Android                          | iOS                                 |
 | --------------------------------------- | -------------------------------- | ----------------------------------- |
 | `isAvailable()`                         | Checks for Play Store            | Always `true`                       |
 | `requestReview()` failure               | Rejects with `REVIEW_FLOW_ERROR` | Never rejects for the prompt itself |
