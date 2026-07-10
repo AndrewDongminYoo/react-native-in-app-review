@@ -487,7 +487,7 @@ import {
   isAvailable,
   openStoreListing,
   requestReview,
-} from 'react-native-in-app-review';
+} from 'react-native-in-app-review-newarch';
 
 export default function App() {
   const [status, setStatus] = useState('');
@@ -544,14 +544,14 @@ const styles = StyleSheet.create({
 - [ ] **Step 2: Replace `README.md`**
 
 ````md
-# react-native-in-app-review
+# react-native-in-app-review-newarch
 
 Prompt users to rate your app without leaving it. Wraps the [Google Play In-App Review API](https://developer.android.com/guide/playcore/in-app-review) (Android) and [StoreKit `requestReview`](https://developer.apple.com/documentation/storekit/skstorereviewcontroller) (iOS).
 
 ## Installation
 
 ```sh
-npm install react-native-in-app-review
+npm install react-native-in-app-review-newarch
 ```
 
 ## Usage
@@ -561,7 +561,7 @@ import {
   isAvailable,
   requestReview,
   openStoreListing,
-} from 'react-native-in-app-review';
+} from 'react-native-in-app-review-newarch';
 
 // Check support before prompting
 const supported = await isAvailable();

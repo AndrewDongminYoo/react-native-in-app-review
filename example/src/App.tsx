@@ -3,7 +3,7 @@ import {
   isAvailable,
   requestReview,
   openStoreListing,
-} from '@dongminyu/react-native-in-app-review';
+} from 'react-native-in-app-review-newarch';
 import { useEffect, useState } from 'react';
 
 export default function App() {

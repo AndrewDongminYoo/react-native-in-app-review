@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "@dongminyu/react-native-in-app-review": ["./src/index"]
+      "react-native-in-app-review-newarch": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

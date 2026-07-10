@@ -3,6 +3,7 @@ codegen
 Dongmin
 gradlew
 inappreview
+newarch
 nvmrc
 objc
 Podfile
