@@ -35,6 +35,7 @@ StoreKit is linked automatically via the podspec — no manual framework additio
 ### Android
 
 No additional setup required. `com.google.android.play:review` is declared in the library's `build.gradle` and resolved automatically by Gradle.
+The library's manifest also declares a `<queries>` entry for `com.android.vending`, so `isAvailable()` can detect the Play Store on apps targeting Android 11 (API 30) or higher, where [package visibility](https://developer.android.com/training/package-visibility) filtering would otherwise hide it.
 
 > **Requirement**: The in-app review dialog only works on devices with **Google Play Store installed**. It will not appear on emulators without Play Store or on non-Google Android devices.
 

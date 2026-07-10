@@ -1,2 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <!--
+    Android 11 (API 30) package visibility filtering hides other installed
+    packages by default. Without this, getPackageInfo("com.android.vending")
+    in InAppReviewModule.isAvailable() throws NameNotFoundException on
+    consumers targeting API 30+, producing a false negative even when the
+    Play Store is installed. Manifest merger unions this into every consumer.
+    https://developer.android.com/training/package-visibility
+  -->
+  <queries>
+    <package android:name="com.android.vending" />
+  </queries>
 </manifest>
