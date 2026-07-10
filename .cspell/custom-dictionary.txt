@@ -1,16 +1,21 @@
 # Custom Dictionary Words
+agentic
 codegen
 Dongmin
 gradlew
 inappreview
+itms
 newarch
+NSURL
 nvmrc
 objc
 Podfile
 podspec
+Samir
 shellcheck
 Srcs
 watchmanconfig
+Wdeprecated
 xcodeproj
 xcworkspace
 yarnrc

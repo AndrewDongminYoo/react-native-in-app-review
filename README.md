@@ -87,7 +87,7 @@ await openStoreListing({ appStoreId: '1234567890' });
 | ------------ | -------- | -------- | ------------------------------------------ |
 | `appStoreId` | `string` | iOS only | Numeric App Store ID — **required on iOS** |
 
-| Platform | Behaviour                                                                                                              |
+| Platform | Behavior                                                                                                               |
 | -------- | ---------------------------------------------------------------------------------------------------------------------- |
 | Android  | Opens `market://details?id=<packageName>`, falls back to `https://play.google.com/store/apps/details?id=<packageName>` |
 | iOS      | Opens `itms-apps://itunes.apple.com/app/id<appStoreId>?action=write-review`                                            |
@@ -191,7 +191,7 @@ In development (local debug builds not uploaded to Play Console), `requestReview
 
 ### iOS: Simulator vs real device
 
-| Environment              | Behaviour                                                                                                                         |
+| Environment              | Behavior                                                                                                                          |
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
 | Simulator                | Shows a **mock** dialog that looks identical to the real one. Rate-limiting does not apply.                                       |
 | Real device (debug)      | Rate-limiting applies. Use `Settings > [App Name] > Reset Review Prompt` (if available) or delete and reinstall the app to reset. |
@@ -203,7 +203,7 @@ Do not tie any app logic to the assumption that `requestReview()` resolving mean
 
 ## Platform Notes
 
-| Behaviour                               | Android                          | iOS                                 |
+| Behavior                                | Android                          | iOS                                 |
 | --------------------------------------- | -------------------------------- | ----------------------------------- |
 | `isAvailable()`                         | Checks for Play Store            | Always `true`                       |
 | `requestReview()` failure               | Rejects with `REVIEW_FLOW_ERROR` | Never rejects for the prompt itself |
