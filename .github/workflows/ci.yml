@@ -39,6 +39,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          # These jobs never use GITHUB_TOKEN for git operations, but they run
+          # repo-controlled scripts (yarn install/prepare/lint/test). Don't leave
+          # the token in .git/config where those scripts could read it.
+          persist-credentials: false
 
       - name: Setup
         uses: ./.github/actions/setup
@@ -57,6 +62,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          # These jobs never use GITHUB_TOKEN for git operations, but they run
+          # repo-controlled scripts (yarn install/prepare/lint/test). Don't leave
+          # the token in .git/config where those scripts could read it.
+          persist-credentials: false
 
       - name: Setup
         uses: ./.github/actions/setup
@@ -72,6 +82,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          # These jobs never use GITHUB_TOKEN for git operations, but they run
+          # repo-controlled scripts (yarn install/prepare/lint/test). Don't leave
+          # the token in .git/config where those scripts could read it.
+          persist-credentials: false
 
       - name: Setup
         uses: ./.github/actions/setup
@@ -87,6 +102,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          # These jobs never use GITHUB_TOKEN for git operations, but they run
+          # repo-controlled scripts (yarn install/prepare/lint/test). Don't leave
+          # the token in .git/config where those scripts could read it.
+          persist-credentials: false
 
       - name: Setup
         uses: ./.github/actions/setup
