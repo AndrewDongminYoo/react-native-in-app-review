@@ -1536,37 +1536,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dongminyu/react-native-in-app-review@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@dongminyu/react-native-in-app-review@workspace:."
-  dependencies:
-    "@eslint/compat": "npm:^2.0.3"
-    "@eslint/eslintrc": "npm:^3.3.5"
-    "@eslint/js": "npm:^10.0.1"
-    "@jest/globals": "npm:^30.0.0"
-    "@react-native/babel-preset": "npm:0.85.0"
-    "@react-native/eslint-config": "npm:0.85.0"
-    "@react-native/jest-preset": "npm:0.85.0"
-    "@types/react": "npm:^19.2.0"
-    del-cli: "npm:^7.0.0"
-    eslint: "npm:^9.39.4"
-    eslint-config-prettier: "npm:^10.1.8"
-    eslint-plugin-ft-flow: "npm:^3.0.11"
-    eslint-plugin-prettier: "npm:^5.5.5"
-    jest: "npm:^30.3.0"
-    prettier: "npm:^3.8.1"
-    react: "npm:19.2.3"
-    react-native: "npm:0.85.0"
-    react-native-builder-bob: "npm:^0.41.0"
-    react-native-web: "npm:~0.21.1"
-    turbo: "npm:^2.8.21"
-    typescript: "npm:^6.0.2"
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  languageName: unknown
-  linkType: soft
-
 "@emnapi/core@npm:^1.4.3":
   version: 1.10.0
   resolution: "@emnapi/core@npm:1.10.0"
@@ -1871,15 +1840,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:^10.0.1":
-  version: 10.0.1
-  resolution: "@eslint/js@npm:10.0.1"
-  peerDependencies:
-    eslint: ^10.0.0
-  peerDependenciesMeta:
-    eslint:
-      optional: true
-  checksum: 10c0/9f3fcaf71ba7fdf65d82e8faad6ecfe97e11801cc3c362b306a88ea1ed1344ae0d35330dddb0e8ad18f010f6687a70b75491b9e01c8af57acd7987cee6b3ec6c
+"@eslint/js@npm:^9.39.0":
+  version: 9.39.5
+  resolution: "@eslint/js@npm:9.39.5"
+  checksum: 10c0/49894e98ba313a7d3bfb1b20d55c0f9826be45a7db876fd84e533ac7f101b1d95b51cd22c6a6db3a45066b9c0d068c31b4a22fa0db8a6cc8744a25540efdb824
   languageName: node
   linkType: hard
 
@@ -2423,6 +2387,13 @@ __metadata:
   dependencies:
     eslint-scope: "npm:5.1.1"
   checksum: 10c0/75dda3e623b8ad7369ca22552d6beee337a814b2d0e8a32d23edd13fcb65c8082b32c5d86e436f3860dd7ade30d91d5db55d4ef9a08fb5a976c718ecc0d88a74
+  languageName: node
+  linkType: hard
+
+"@nodable/entities@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@nodable/entities@npm:3.0.0"
+  checksum: 10c0/5e57422ce08d9f83a7ad09d8f90953e2e63b3274c3f941bf7ddf64f290473e70d47acbd6c8b9e60169c2a8c5c2424c4131bdd99b937792413f55a4a146f76658
   languageName: node
   linkType: hard
 
@@ -3807,6 +3778,13 @@ __metadata:
     normalize-path: "npm:^3.0.0"
     picomatch: "npm:^2.0.4"
   checksum: 10c0/57b06ae984bc32a0d22592c87384cd88fe4511b1dd7581497831c56d41939c8a001b28e7b853e1450f2bf61992dfcaa8ae2d0d161a0a90c4fb631ef07098fbac
+  languageName: node
+  linkType: hard
+
+"anynum@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "anynum@npm:1.0.1"
+  checksum: 10c0/cfda92c9215722fc4b15faa33d0eb3d5dfd28fba6cb67c1f50d214feaa7ba6497814a3e110777853585de6d91c8c962a1ae425b637d3598d9f9d8f6f6802e5bb
   languageName: node
   linkType: hard
 
@@ -5761,14 +5739,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-xml-parser@npm:^4.4.1":
-  version: 4.5.6
-  resolution: "fast-xml-parser@npm:4.5.6"
+"fast-xml-builder@npm:^1.2.0":
+  version: 1.3.0
+  resolution: "fast-xml-builder@npm:1.3.0"
   dependencies:
-    strnum: "npm:^1.0.5"
+    path-expression-matcher: "npm:^1.6.2"
+    xml-naming: "npm:^0.3.0"
+  checksum: 10c0/3ab79c0da68dac4fccd6a92289b60a5ce7d2147f765db48b0a30263a814d21ce5173b6e3e6e1e728c982ef9642db4cc790e536c0d2a56d9c612e46d4286e2b74
+  languageName: node
+  linkType: hard
+
+"fast-xml-parser@npm:^5.7.0":
+  version: 5.10.1
+  resolution: "fast-xml-parser@npm:5.10.1"
+  dependencies:
+    "@nodable/entities": "npm:^3.0.0"
+    fast-xml-builder: "npm:^1.2.0"
+    is-unsafe: "npm:^2.0.0"
+    path-expression-matcher: "npm:^1.6.2"
+    strnum: "npm:^2.4.1"
+    xml-naming: "npm:^0.3.0"
   bin:
     fxparser: src/cli/cli.js
-  checksum: 10c0/1c19e183b5ee93bea9b24e1ddb0aed8564b273c6106af622b1c11ff8eb1fc8d2033cd7a0cb68976a5f3e05d1cbf0a0026e6f300f904be0bc854ff896dbdf38d2
+  checksum: 10c0/a7ef867ede5366b52efc8d490a5d39fa0afcdcb9d66e1f19296bea23dd304d167de0e61dbabb7138638fbbb099514b89e31710fd4ddc32559513ce1bdc776034
   languageName: node
   linkType: hard
 
@@ -6828,6 +6821,13 @@ __metadata:
   version: 0.1.0
   resolution: "is-unicode-supported@npm:0.1.0"
   checksum: 10c0/00cbe3455c3756be68d2542c416cab888aebd5012781d6819749fefb15162ff23e38501fe681b3d751c73e8ff561ac09a5293eba6f58fdf0178462ce6dcb3453
+  languageName: node
+  linkType: hard
+
+"is-unsafe@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "is-unsafe@npm:2.0.0"
+  checksum: 10c0/d7f721ae13e1abcec419e31f375b9b0840afc790250af3650709160ac9301d9f73e357b2ff832282258529b4f2d3cd622fcddd648f99704e686b2673f4e76a16
   languageName: node
   linkType: hard
 
@@ -8722,6 +8722,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"path-expression-matcher@npm:^1.6.2":
+  version: 1.6.2
+  resolution: "path-expression-matcher@npm:1.6.2"
+  checksum: 10c0/8241302f563de367a81acacd417055a22dd3792a84700569dc2a7888da31aa18eb01131c55f05200c92790b6c45b01fee1984b02540cc5f15726ba1b73a8a075
+  languageName: node
+  linkType: hard
+
 "path-is-absolute@npm:^1.0.0":
   version: 1.0.1
   resolution: "path-is-absolute@npm:1.0.1"
@@ -9091,6 +9098,37 @@ __metadata:
     react-native-web: "npm:~0.21.1"
     vite: "npm:^7.1.1"
     vite-plugin-commonjs: "npm:^0.10.4"
+  languageName: unknown
+  linkType: soft
+
+"react-native-in-app-review-newarch@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "react-native-in-app-review-newarch@workspace:."
+  dependencies:
+    "@eslint/compat": "npm:^2.0.3"
+    "@eslint/eslintrc": "npm:^3.3.5"
+    "@eslint/js": "npm:^9.39.0"
+    "@jest/globals": "npm:^30.0.0"
+    "@react-native/babel-preset": "npm:0.85.0"
+    "@react-native/eslint-config": "npm:0.85.0"
+    "@react-native/jest-preset": "npm:0.85.0"
+    "@types/react": "npm:^19.2.0"
+    del-cli: "npm:^7.0.0"
+    eslint: "npm:^9.39.4"
+    eslint-config-prettier: "npm:^10.1.8"
+    eslint-plugin-ft-flow: "npm:^3.0.11"
+    eslint-plugin-prettier: "npm:^5.5.5"
+    jest: "npm:^30.3.0"
+    prettier: "npm:^3.8.1"
+    react: "npm:19.2.3"
+    react-native: "npm:0.85.0"
+    react-native-builder-bob: "npm:^0.41.0"
+    react-native-web: "npm:~0.21.1"
+    turbo: "npm:^2.8.21"
+    typescript: "npm:^6.0.2"
+  peerDependencies:
+    react: ">=18.2.0"
+    react-native: ">=0.76.0"
   languageName: unknown
   linkType: soft
 
@@ -10065,10 +10103,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strnum@npm:^1.0.5":
-  version: 1.1.2
-  resolution: "strnum@npm:1.1.2"
-  checksum: 10c0/a0fce2498fa3c64ce64a40dada41beb91cabe3caefa910e467dc0518ef2ebd7e4d10f8c2202a6104f1410254cae245066c0e94e2521fb4061a5cb41831952392
+"strnum@npm:^2.4.1":
+  version: 2.4.1
+  resolution: "strnum@npm:2.4.1"
+  dependencies:
+    anynum: "npm:^1.0.1"
+  checksum: 10c0/0d6a42bf8a1ad74b0a6c048ecf3bea50757383bcf304877ebe6e62acca5574bc088ce71bfb4de4b89b2ab44c618834c76be5894da04b67c673ff6677788b2638
   languageName: node
   linkType: hard
 
@@ -10895,6 +10935,13 @@ __metadata:
     utf-8-validate:
       optional: true
   checksum: 10c0/bd7d5f4aaf04fae7960c23dcb6c6375d525e00f795dd20b9385902bd008c40a94d3db3ce97d878acc7573df852056ca546328b27b39f47609f80fb22a0a9b61d
+  languageName: node
+  linkType: hard
+
+"xml-naming@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "xml-naming@npm:0.3.0"
+  checksum: 10c0/48bfc4fe888cdf1c3eceb7853632ebce59e4aa71f0ae33c3f9ce1fbd3213caad293457de0a311114491f0d4efcfba70977dcba3a4f66dfed8c92edbb938056bf
   languageName: node
   linkType: hard
 
