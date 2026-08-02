@@ -36,7 +36,7 @@ yarn release          # release-it: bumps version, publishes npm, creates GitHub
 
 ### TurboModule Data Flow
 
-```
+```log
 src/NativeInAppReview.ts   ← Codegen spec (Spec interface = single source of truth)
         │
         ├── Android codegen → NativeInAppReviewSpec.kt (abstract class, auto-generated)
@@ -87,7 +87,7 @@ src/NativeInAppReview.ts   ← Codegen spec (Spec interface = single source of t
 
 ## Workspace Layout
 
-```
+```log
 react-native-in-app-review-newarch/   ← library root (yarn workspace)
 ├── src/                              ← TypeScript source; compiled to lib/
 ├── ios/                              ← Obj-C++ TurboModule
