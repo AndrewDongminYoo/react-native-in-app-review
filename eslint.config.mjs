@@ -3,6 +3,7 @@ import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import prettier from 'eslint-plugin-prettier';
 import { defineConfig } from 'eslint/config';
+import * as espree from 'espree';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -29,8 +30,24 @@ export default defineConfig([
   {
     files: ['**/*.mjs'],
     languageOptions: {
+      parser: espree,
       ecmaVersion: 'latest',
       sourceType: 'module',
     },
+  },
+  // @babel/eslint-parser (pulled in by @react-native's eslintrc config) ships an
+  // eslint-scope@5 ScopeManager without `addGlobals`, which ESLint 10 requires.
+  // No .js here needs Flow/JSX parsing, so use espree instead.
+  {
+    files: ['**/*.js', '**/*.cjs'],
+    languageOptions: {
+      parser: espree,
+      ecmaVersion: 'latest',
+      sourceType: 'commonjs',
+    },
+  },
+  {
+    files: ['example/index.js'],
+    languageOptions: { sourceType: 'module' },
   },
 ]);
