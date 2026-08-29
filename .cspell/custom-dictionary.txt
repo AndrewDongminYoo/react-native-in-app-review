@@ -2,6 +2,7 @@
 agentic
 codegen
 Dongmin
+dotenv
 gradlew
 inappreview
 itms
@@ -13,6 +14,7 @@ Podfile
 podspec
 Samir
 shellcheck
+shfmt
 Srcs
 watchmanconfig
 Wdeprecated
