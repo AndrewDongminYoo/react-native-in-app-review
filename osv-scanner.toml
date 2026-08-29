@@ -1,0 +1,13 @@
+# OSV Scanner configuration for yarn.lock.
+# image-size@1.2.1 is an indirect dependency of metro@0.84.4.
+# GitHub Advisory GHSA-5p2g-fcmc-qvqq and GHSA-w3rx-r6r6-pgpr have no patched version as of 2026-08-29.
+# This dependency is used only during development and is not included in the published package.
+# Re-evaluate these exceptions when upstream releases a patch.
+
+[[IgnoredVulns]]
+id = "GHSA-5p2g-fcmc-qvqq"
+reason = "image-size@1.2.1 has no patch available as of 2026-08-29. It is an indirect development dependency through metro@0.84.4. Re-evaluate when a patched version is released."
+
+[[IgnoredVulns]]
+id = "GHSA-w3rx-r6r6-pgpr"
+reason = "image-size@1.2.1 has no patch available as of 2026-08-29. It is an indirect development dependency through metro@0.84.4. Re-evaluate when a patched version is released."
