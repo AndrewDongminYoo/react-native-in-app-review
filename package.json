@@ -78,9 +78,9 @@
     "espree": "^11.2.0",
     "jest": "^30.4.2",
     "prettier": "^3.9.6",
-    "react": "19.2.8",
+    "react": "19.3.1",
     "react-native": "0.86.2",
-    "react-native-builder-bob": "^0.43.0",
+    "react-native-builder-bob": "^0.44.1",
     "react-native-web": "~0.21.2",
     "turbo": "^2.10.8",
     "typescript": "^6.0.3"
