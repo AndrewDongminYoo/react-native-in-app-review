@@ -93,7 +93,19 @@
     "fast-xml-parser": "^5.7.0",
     "jest-environment-node": "^30.4.1",
     "nanoid": "^3.3.18",
-    "qs": "^6.17.1"
+    "qs": "^6.17.1",
+    "@eslint/config-array@npm:0.23.5/minimatch": "^11.0.1",
+    "@jest/reporters@npm:30.5.2/glob": "^14.0.2",
+    "@typescript-eslint/typescript-estree@npm:8.65.0/minimatch": "^11.0.1",
+    "eslint-plugin-react-hooks@npm:7.1.1/zod": "^4.6.6",
+    "eslint@npm:10.13.0/minimatch": "^11.0.1",
+    "jest-config@npm:30.5.2/glob": "^14.0.2",
+    "jest-runtime@npm:30.5.2/glob": "^14.0.2",
+    "joi@npm:^17.2.1": "^17.13.9",
+    "react-native-builder-bob@npm:0.41.0/glob": "^14.0.2",
+    "react-native-builder-bob@npm:0.43.0/glob": "^14.0.2",
+    "test-exclude@npm:7.0.2/glob": "^14.0.2",
+    "test-exclude@npm:7.0.2/minimatch": "^11.0.1"
   },
   "workspaces": [
     "example"
